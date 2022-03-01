@@ -8,7 +8,7 @@ THIS IS MY FIRST TIME TRYING TO CREATE A DOCKER IMAGE
 This Dockerfile should build a Ubuntu 20.04 based image with all the needed prerequirements for getting 
 https://github.com/nerdaxic/glados-voice-assistant to work. Consider this work in progress (as is the app this docker image is for).
 
-It seems AVX2 is required from the CPU.
+It seems AVX2 is required from the CPU. Ubuntu 20.04 because the developer is using it too🤷‍♂️
 
 Usage:
 
