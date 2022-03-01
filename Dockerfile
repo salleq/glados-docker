@@ -9,10 +9,11 @@ RUN apt-get update && \
     ln -fs /usr/share/zoneinfo/Europe/Helsinki /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
+# Get most of the needed prereqs of GLaDOS
+RUN apt-get install -y sudo apt-utils curl portaudio19-dev build-essential swig libpulse-dev libasound2-dev flac curl git python3.7 python3-pip python3-gi espeak-ng gstreamer-1.0
 
-RUN apt-get update -y && \
-    apt-get install -y sudo apt-utils curl portaudio19-dev build-essential swig libpulse-dev libasound2-dev flac curl git python3.7 python3-pip python3-gi espeak-ng gstreamer-1.0
-
+# Not sure if needed - tested aply
+RUN apt-get install -y alsa-utils
 
 RUN pip3 install pyaudio
 RUN pip3 install python-dotenv
