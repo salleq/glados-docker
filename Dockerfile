@@ -1,19 +1,20 @@
 FROM ubuntu:20.04
 
-ENV LANG="fi_FI.UTF-8"
-ENV LANGUAGE=fi_FI
+ARG LANG="fi_FI.UTF-8"
+ARG LANGUAGE=fi_FI
 ENV TZ=Europe/Helsinki
+ENV HOST_UID=1000
+ENV HOST_GID=1000
 
 RUN apt-get update && \
     apt-get install -yq tzdata && \
     ln -fs /usr/share/zoneinfo/Europe/Helsinki /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
-# Get most of the needed prereqs of GLaDOS
-RUN apt-get install -y sudo apt-utils curl portaudio19-dev build-essential swig libpulse-dev libasound2-dev flac curl git python3.7 python3-pip python3-gi espeak-ng gstreamer-1.0
 
-# Not sure if needed - tested aply
-RUN apt-get install -y alsa-utils
+RUN apt-get update -y && \
+    apt-get install -y sudo apt-utils curl portaudio19-dev build-essential swig libpulse-dev libasound2-dev flac curl git python3.8 python3-pip python3-gi espeak-ng gstreamer-1.0 pulseaudio nano alsa-utils
+
 
 RUN pip3 install pyaudio
 RUN pip3 install python-dotenv
@@ -32,7 +33,10 @@ RUN pip3 install requests
 RUN pip3 install speechrecognition
 
 
-RUN git clone https://github.com/nerdaxic/glados-voice-assistant/
-RUN git clone https://github.com/nerdaxic/glados-tts.git glados-voice-assistant/glados_tts
-
-ADD settings.env /glados-voice-assistant
+RUN addgroup --gid 1000 glados
+RUN adduser --uid 1000 --gid 1000 --gecos "" --disabled-password glados
+RUN mkdir /glados-voice-assistant
+RUN chown glados /glados-voice-assistant
+USER glados
+#RUN git clone https://github.com/nerdaxic/glados-voice-assistant/
+#RUN git clone https://github.com/nerdaxic/glados-tts.git glados-voice-assistant/glados_tts

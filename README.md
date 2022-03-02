@@ -10,15 +10,21 @@ https://github.com/nerdaxic/glados-voice-assistant to work. Consider this work i
 
 It seems AVX2 is required from the CPU. Ubuntu 20.04 because the developer is using it too🤷‍♂️
 
-Usage:
+Usage: clone the repo to your home folder
 ```console 
-git clone
+git clone 
 ``` 
-rename the settings.env.sample to settings.env and modify to your needs.
+rename the settings.env.sample in the GLaDOS repo to settings.env and modify to your needs.
 ```console 
-docker build -t=local:glados .
-docker run --container_name glados --device /dev/snd -p 5000:5000 -it local:glados /bin/ba
+./build.sh
 ``` 
+
+check host_runner.sh so that folders are intact. If your used ID is something else than 1000 you may need to edit more stuff.
+This doesn't work if your user doesn't have docker access (if you need to 'sudo' to run the next script)
+
+```console
+./host_runner.sh
+```
 
 then you can run the python script (inside the container) with:
 ```console 
