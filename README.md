@@ -3,6 +3,8 @@
 I DON'T KNOW WHAT I'M DOING
 THIS IS MY FIRST TIME TRYING TO CREATE A DOCKER IMAGE
 
+At the moment audio works inside the container but not in the python scripts. I don't know why. Send help.
+
 *** END OF DISCLAIMER ***
 
 This Dockerfile should build a Ubuntu 20.04 based image with all the needed prerequirements for getting 
