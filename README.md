@@ -32,6 +32,28 @@ check host_runner.sh so that folders are intact. If your used ID is something el
 This doesn't work if your user doesn't have docker access (if you need to 'sudo' to run the next script)
 Also your user ID and GID should be 1000, if it's something different then modify host_runner.sh accordingly.
 
+You also have to edit gladosTTS.py in the folder:
+add this on line 19(ish):
+```python
+from subprocess import call
+``` 
+
+a few lines below that modify def playFile like this:
+```python
+def playFile(filename):
+        call(["aplay", filename])
+```
+finally, find the comment #speak from the file and and replace this:
+```python
+ps('output.wav')
+```
+
+with this
+```python
+call(["aplay", "./output.wav"])
+```
+save the file.
+Then:
 ```console
 ./host_runner.sh
 ```
