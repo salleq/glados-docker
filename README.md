@@ -16,6 +16,9 @@ git clone https://github.com/nerdaxic/glados-voice-assistant
 ``` 
 
 Then clone this repo to your home folder.
+``` console
+git clone https://github.com/salleq/glados-docker
+```
 
 rename the settings.env.sample in the GLaDOS repo to settings.env and modify to your needs. This seems to use whichever sound card and microphone you've chosen in Pulseaudio (?)
 Set at least the TTS_SAMPLE_FOLDER to point to /glados-voice-assistant/audio/tts
