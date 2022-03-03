@@ -3,8 +3,6 @@
 I DON'T KNOW WHAT I'M DOING
 THIS IS MY FIRST TIME TRYING TO CREATE A DOCKER IMAGE
 
-At the moment audio works inside the container but not in the python scripts. I don't know why. Send help.
-
 *** END OF DISCLAIMER ***
 
 This Dockerfile should build a Ubuntu 20.04 based image with all the needed prerequirements for getting 
@@ -12,17 +10,24 @@ https://github.com/nerdaxic/glados-voice-assistant to work. Consider this work i
 
 It seems AVX2 is required from the CPU. Ubuntu 20.04 because the developer is using it too🤷‍♂️
 
-Usage: clone the repo to your home folder
+Usage: clone the glados-voice-assistant repo to your home folder.
 ```console 
-git clone 
+git clone https://github.com/nerdaxic/glados-voice-assistant
 ``` 
-rename the settings.env.sample in the GLaDOS repo to settings.env and modify to your needs.
+
+Then clone this repo to your home folder.
+
+rename the settings.env.sample in the GLaDOS repo to settings.env and modify to your needs. This seems to use whichever sound card and microphone you've chosen in Pulseaudio (?)
+Set at least the TTS_SAMPLE_FOLDER to point to /glados-voice-assistant/audio/tts
+Also create ~/glados-voice-assistant/audio/tts folder.
+Then:
 ```console 
 ./build.sh
 ``` 
 
 check host_runner.sh so that folders are intact. If your used ID is something else than 1000 you may need to edit more stuff.
 This doesn't work if your user doesn't have docker access (if you need to 'sudo' to run the next script)
+Also your user ID and GID should be 1000, if it's something different then modify host_runner.sh accordingly.
 
 ```console
 ./host_runner.sh
@@ -30,8 +35,8 @@ This doesn't work if your user doesn't have docker access (if you need to 'sudo'
 
 then you can run the python script (inside the container) with:
 ```console 
+cd /glados-voice-assistant
 python3 /glados-voice-assistant/glados.py
 ```
-(doesn't seem to work yet)
 
-I don't know if microphone works and if it's possible to get working.
+I've had audio working, as long as it's selected from GUI (I don't know if it uses pulseaudio or alsa). I don't know how to change that from console.
