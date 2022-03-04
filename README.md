@@ -61,7 +61,7 @@ Then:
 then you can run the python script (inside the container) with:
 ```console 
 cd /glados-voice-assistant
-python3 /glados-voice-assistant/glados.py
+python3 /glados.py
 ```
 
 I've had audio working, as long as it's selected from GUI (I don't know if it uses pulseaudio or alsa). I don't know how to change that from console.
