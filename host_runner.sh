@@ -10,7 +10,7 @@ USER_UID=$(id -u)
 
 
 docker run -t -i \
-  --volume=$HOME/glados-voice-assistant:/glados-voice-assistant:rw \
+  --volume=$HOME/glados-voice-assistant:/home/glados/glados-voice-assistant:rw \
   --volume=/run/user/${USER_UID}/pulse:/run/user/1000/pulse \
   --name glados \
   --privileged \

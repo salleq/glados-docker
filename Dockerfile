@@ -13,7 +13,7 @@ RUN apt-get update && \
 
 
 RUN apt-get update -y && \
-    apt-get install -y sudo apt-utils curl portaudio19-dev build-essential swig libpulse-dev libasound2-dev flac curl git python3.8 python3-pip python3-gi espeak-ng gstreamer-1.0 pulseaudio nano alsa-utils
+    apt-get install -y sudo apt-utils curl portaudio19-dev build-essential swig libpulse-dev libasound2-dev flac curl git python3.7 python3-pip python3-gi espeak-ng gstreamer-1.0 pulseaudio nano alsa-utils
 
 
 RUN pip3 install pyaudio
@@ -22,7 +22,6 @@ RUN pip3 install pocketsphinx
 RUN pip3 install sounddevice
 RUN pip3 install pyserial
 RUN pip3 install psutil
-RUN pip3 install playsound
 RUN pip3 install flask
 RUN pip3 install torch
 RUN pip3 install phonemizer
