@@ -60,7 +60,7 @@ Then:
 
 then you can run the python script (inside the container) with:
 ```console 
-cd /glados-voice-assistant
+cd ~/glados-voice-assistant
 python3 /glados.py
 ```
 
