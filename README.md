@@ -8,11 +8,12 @@ THIS IS MY FIRST TIME TRYING TO CREATE A DOCKER IMAGE
 This Dockerfile should build a Ubuntu 20.04 based image with all the needed prerequirements for getting 
 https://github.com/nerdaxic/glados-voice-assistant to work. Consider this work in progress (as is the app this docker image is for).
 
-It seems AVX2 is required from the CPU. Ubuntu 20.04 because the developer is using it too🤷‍♂️
+AVX2 is required from the CPU. Ubuntu 20.04 because the developer is using it too🤷‍♂️
 
-Usage: clone the glados-voice-assistant repo to your home folder.
+Usage: clone the glados-voice-assistant and glados-tts repos to your home folder.
 ```console 
 git clone https://github.com/nerdaxic/glados-voice-assistant
+git clone https://github.com/nerdaxic/glados-tts glados-voice-assistant/glados_tts
 ``` 
 
 Then clone this repo to your home folder.
