@@ -30,6 +30,7 @@ RUN pip3 install unidecode
 RUN pip3 install scipy
 RUN pip3 install requests
 RUN pip3 install speechrecognition
+RUN pip3 install pixel_ring
 
 
 RUN addgroup --gid 1000 glados
