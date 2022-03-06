@@ -21,5 +21,4 @@ docker run -t -i \
   -v /dev/snd:/dev/snd \
   -u 1000:1000 \
   ${DOCKER_IMAGE_ID} \
-  ${@}
-
+  ${@} \

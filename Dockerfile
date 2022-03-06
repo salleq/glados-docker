@@ -38,5 +38,7 @@ RUN adduser --uid 1000 --gid 1000 --gecos "" --disabled-password glados
 #RUN mkdir /glados-voice-assistant
 #RUN chown glados /glados-voice-assistant
 USER glados
+WORKDIR "/home/glados/glados-voice-assistant"
+#CMD python3 ./glados.py
 #RUN git clone https://github.com/nerdaxic/glados-voice-assistant/
 #RUN git clone https://github.com/nerdaxic/glados-tts.git glados-voice-assistant/glados_tts
