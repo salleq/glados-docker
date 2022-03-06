@@ -14,6 +14,7 @@ docker run -t -i \
   --volume=/run/user/${USER_UID}/pulse:/run/user/1000/pulse \
   --name glados \
   --privileged \
+  --rm \
   -e PULSE_SERVER=unix:/run/user/1000/pulse/native \
   -p 5000:5000 \
   -v /run/user/1000/pulse/native:/run/user/1000/pulse/native \
