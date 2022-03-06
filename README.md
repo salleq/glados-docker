@@ -13,7 +13,9 @@ AVX2 is required from the CPU. Ubuntu 20.04 because the developer is using it to
 Usage: clone the glados-voice-assistant and glados-tts repos to your home folder.
 ```console 
 git clone https://github.com/nerdaxic/glados-voice-assistant
-git clone https://github.com/nerdaxic/glados-tts glados-voice-assistant/glados_tts
+cd glados-voice-assistant
+git submodule init
+git submodule update
 ``` 
 
 Then clone this repo to your home folder.
